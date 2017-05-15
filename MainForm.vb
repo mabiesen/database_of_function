@@ -28,4 +28,8 @@ Public Class MainForm
     Private Sub quitButton_Click(sender As Object, e As EventArgs) Handles quitButton.Click
         Me.Close()
     End Sub
+
+    Private Sub createFunctionButton_Click(sender As Object, e As EventArgs) Handles createFunctionButton.Click
+        CheckDataForm.Show()
+    End Sub
 End Class

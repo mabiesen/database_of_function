@@ -28,6 +28,7 @@ Partial Class MainForm
         Me.welcomeLabel = New System.Windows.Forms.Label()
         Me.ofdHidden = New System.Windows.Forms.OpenFileDialog()
         Me.quitButton = New System.Windows.Forms.Button()
+        Me.createFunctionButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ofdButton
@@ -73,18 +74,28 @@ Partial Class MainForm
         '
         'quitButton
         '
-        Me.quitButton.Location = New System.Drawing.Point(117, 561)
+        Me.quitButton.Location = New System.Drawing.Point(117, 686)
         Me.quitButton.Name = "quitButton"
         Me.quitButton.Size = New System.Drawing.Size(528, 77)
         Me.quitButton.TabIndex = 4
         Me.quitButton.Text = "Quit Program"
         Me.quitButton.UseVisualStyleBackColor = True
         '
+        'createFunctionButton
+        '
+        Me.createFunctionButton.Location = New System.Drawing.Point(117, 557)
+        Me.createFunctionButton.Name = "createFunctionButton"
+        Me.createFunctionButton.Size = New System.Drawing.Size(528, 77)
+        Me.createFunctionButton.TabIndex = 5
+        Me.createFunctionButton.Text = "Add Individual Function"
+        Me.createFunctionButton.UseVisualStyleBackColor = True
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(763, 688)
+        Me.ClientSize = New System.Drawing.Size(763, 825)
+        Me.Controls.Add(Me.createFunctionButton)
         Me.Controls.Add(Me.quitButton)
         Me.Controls.Add(Me.welcomeLabel)
         Me.Controls.Add(Me.dbBrowseButton)
@@ -103,4 +114,5 @@ Partial Class MainForm
     Friend WithEvents welcomeLabel As Label
     Friend WithEvents ofdHidden As OpenFileDialog
     Friend WithEvents quitButton As Button
+    Friend WithEvents createFunctionButton As Button
 End Class

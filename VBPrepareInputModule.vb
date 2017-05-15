@@ -6,16 +6,19 @@
 
 Module VBPrepareInputModule
     Public Sub loopForFuncStart(filedata, Optional mycounter = 0)
+        Dim temptuple As Tuple(Of String, String, String, String, String, String, String)
         While mycounter < filedata.length()
             If filedata(mycounter).contains("Func Purpose") Then
-                loopForFuncInfo(filedata, mycounter)
+                temptuple = loopForFuncInfo(filedata, mycounter)
+                UserCheckData(temptuple.Item1, temptuple.Item2, temptuple.Item3, temptuple.Item4, temptuple.Item5, temptuple.Item6, temptuple.Item7)
                 Exit Sub
             End If
             mycounter = mycounter + 1
         End While
+        MessageBox.Show("You have reached the end of the file, there are no more identified functions.")
     End Sub
 
-    Public Sub loopForFuncInfo(filedata, startline)
+    Public Function loopForFuncInfo(filedata, startline) As Tuple(Of String, String, String, String, String, String, String)
         Dim tempstore, purpose, inputs, outputs, tags, name, myimports, wholefunction As String
         Dim purposeprompt As String = "Func Purpose: "
         Dim inputsprompt As String = "Func Inputs: "
@@ -46,7 +49,18 @@ Module VBPrepareInputModule
             startline = startline + 1
         End While
         GlobalVariables.lastLineReferenced = startline
-        UserCheckData(purpose, inputs, outputs, tags, name, myimports, wholefunction)
+        Return Tuple.Create(name, purpose, tags, myimports, inputs, outputs, wholefunction)
+    End Function
+
+    Public Sub UserCheckData(name, purpose, tags, myimports, inputs, outputs, wholefunction)
+        CheckDataForm.Show()
+        CheckDataForm.nameBox.Text = name
+        CheckDataForm.purposeBox.Text = purpose
+        CheckDataForm.tagBox.Text = tags
+        CheckDataForm.inputsBox.Text = inputs
+        CheckDataForm.outputsBox.Text = outputs
+        CheckDataForm.functionBox.Text = wholefunction
+        CheckDataForm.importsBox.Text = myimports
     End Sub
 
     Public Function removeFuncLabels(line, label) As String
