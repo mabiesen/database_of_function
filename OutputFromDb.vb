@@ -1,0 +1,3 @@
+﻿Module OutputFromDb
+
+End Module
