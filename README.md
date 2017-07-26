@@ -1,9 +1,9 @@
 # Database of reusable code
 
 
-##Deprecated - See Code Database CSharp
+## Deprecated - See Code Database CSharp
 
-##this code was one of my first attempts at visual basic, much can be improved upon.  I have moved my efforts away from visual basic and onto CSharp, in the process I have begun to write much more concise code.
+## this code was one of my first attempts at visual basic, much can be improved upon.  I have moved my efforts away from visual basic and onto CSharp, in the process I have begun to write much more concise code.
 
 As of 5/15/2017 work in progress
 
